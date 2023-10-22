@@ -12,6 +12,8 @@
   --gradient-yellow: linear-gradient(182deg, #fff622 -8.34%, #e07411 126.67%);
 
   /* text */
+
+  /* ini untuk font-size:  */
   --xs: 0.75rem; /* 12px */
   --sm: 0.875rem; /* 14px */
   --base: 1rem; /* 16px */
@@ -21,12 +23,14 @@
   --3xl: 1.875rem; /* 30px */
   --4xl: 2.25rem; /* 36px */
   --5xl: 3rem; /* 48px */
+
+  /* ini untuk font-weight:  */
   --normal: 400;
   --medium: 500;
   --semibold: 600;
   --bold: 700;
 
-  /* background */
+  /* ini untuk background-image:  */
   --page: url("path/to/your/image.jpg");
   --card: url("path/to/your/image.jpg");
 }
