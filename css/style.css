@@ -58,3 +58,135 @@
 /* Extra large devices (1280px and up) */
 @media (min-width: 1280px) {
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--blue);
+  background-image: url(../assets/textura.svg);
+}
+
+header {
+  margin: 10px 10px;
+}
+
+.logo {
+  margin: 10px;
+  padding: 10px;
+  color: var(--white);
+  font-size: var(--3xl);
+  font-weight: var(--bold);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--yellow-500, #eab308);
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.container {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  margin: 10px;
+}
+
+.popup-rules {
+  width: auto;
+  height: auto;
+  font-size: var(--lg);
+  padding: 0 50px;
+  border-radius: 30px;
+  background: var(--white);
+  box-shadow: 4px 4px 28px 0px rgba(19, 25, 79, 0.25);
+}
+
+.popup-rules img {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+  border-radius: 50%;
+}
+
+.btn-start {
+  display: block;
+  margin: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: var(--base);
+  font-weight: var(--bold);
+  width: 300px;
+  padding: 15px 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 2px solid var(--slate-900, #0f172a);
+  background: var(--gradient-yellow);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.btn-start:hover {
+  transform: scale(1.05); 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.footer {
+  position: fixed;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--white);
+  text-align: center;
+}
+
+.dino {
+  margin-left: -50px;
+  padding: 0;
+  width: 286px;
+  height: 250px;
+  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.octopus {
+  margin-left: 75%;
+  margin-top: 0;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.footer p {
+  color: var(--white);
+  font-size: var(--xl);
+  font-weight: var(--semibold);
+  position: absolute;
+  left: 50%; 
+  bottom: 0;
+  transform: translateX(-50%); 
+  text-align: center; 
+}
