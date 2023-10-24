@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,500;0,800;1,900&display=swap");
 :root {
   /* color */
   --blue: #3b82f6;
@@ -29,6 +30,8 @@
   --medium: 500;
   --semibold: 600;
   --bold: 700;
+  --extrabold: 800;
+  --black: 900;
 
   /* ini untuk background-image:  */
   --page: url("path/to/your/image.jpg");
@@ -36,6 +39,7 @@
 }
 
 * {
+  font-family: "Nunito", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,10 +53,39 @@
 
 /* Medium devices (768px and up) */
 @media (min-width: 768px) {
+  body {
+    overflow: hidden;
+    width: 100%;
+  }
+  .wrapper {
+    margin: 300px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .card {
+    max-width: 700px;
+    min-width: 300px;
+  }
 }
 
 /* Large devices (1024px and up) */
 @media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+    width: 100%;
+  }
+  .wrapper {
+    margin: -30px auto;
+    display: block;
+  }
+  .card {
+    max-width: 700px;
+    min-width: 300px;
+  }
+  .img-animal {
+    top: -1000px;
+  }
 }
 
 /* Extra large devices (1280px and up) */
@@ -60,62 +93,91 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: var(--blue);
   background-image: url(../assets/textura.svg);
-}
 
-header {
-  margin: 10px 10px;
+  max-width: 1280px;
 }
-
-.logo {
-  margin: 10px;
-  padding: 10px;
-  color: var(--white);
-  font-size: var(--3xl);
-  font-weight: var(--bold);
-  text-decoration: none;
-}
-
-.logo span {
-  color: var(--yellow-500, #eab308);
-}
-
-header nav {
-  float: right;
-}
-
-header nav ul {
-  display: flex;
-}
-
-header nav ul li {
-  list-style: none;
-  margin: 0 10px;
-}
-
+/* container */
 .container {
-  margin-top: 5%;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+/* container */
+/* navbar */
+header {
+  width: 100%;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+.navbar {
   align-items: center;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  /* background-color: white; */
+}
+.navbar a {
+  font-size: 24px;
+  font-weight: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  -webkit-text-stroke: 1px var(--slate-900);
+}
+.navbar a span {
+  font-size: var(--medium);
+  font-weight: var(--black);
+  color: var(--orange);
+  text-decoration: none;
+  -webkit-text-stroke: 1px var(--slate-900);
 }
 
+.navbar ul {
+  border: 1px solid var(--slate-900);
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+}
+.navbar ul li a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: var(--normal);
+}
+/* navbar */
+
+.card {
+  width: 100%;
+  margin: 30px auto;
+  height: 100%;
+  background-color: var(--white);
+  border-radius: 30px;
+  box-shadow: 4px 4px 28px 0px rgba(19, 25, 79, 0.25);
+  padding: 10px;
+}
 h2 {
   text-align: center;
   margin: 10px;
 }
 
 .popup-rules {
-  width: auto;
-  height: auto;
   font-size: var(--lg);
-  padding: 0 50px;
-  border-radius: 30px;
-  background: var(--white);
-  box-shadow: 4px 4px 28px 0px rgba(19, 25, 79, 0.25);
+  padding: 0 5px;
+}
+.card-rules {
+  border: 3px solid #ececec;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+}
+.card-rules p {
+  font-size: var(--normal);
 }
 
 .popup-rules img {
@@ -142,13 +204,13 @@ h2 {
   border-radius: 50px;
   border: 2px solid var(--slate-900, #0f172a);
   background: var(--gradient-yellow);
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-
 .btn-start:hover {
-  transform: scale(1.05); 
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+  transform: scale(1.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .footer {
@@ -162,14 +224,8 @@ h2 {
 }
 
 .dino {
-  margin-left: -50px;
-  padding: 0;
-  width: 286px;
-  height: 250px;
-  flex-shrink: 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  margin-top: -120px;
+  margin-left: -100px;
 }
 
 .octopus {
@@ -185,8 +241,17 @@ h2 {
   font-size: var(--xl);
   font-weight: var(--semibold);
   position: absolute;
-  left: 50%; 
+  left: 50%;
   bottom: 0;
-  transform: translateX(-50%); 
-  text-align: center; 
+  transform: translateX(-50%);
+  text-align: center;
 }
+
+/* img-animal */
+.img-animal {
+  width: 100%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+}
+/* end img-animal */

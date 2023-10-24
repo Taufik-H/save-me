@@ -6,49 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMP | Save Me Please!</title>
   </head>
+
   <body>
-    
+    <!-- navbar  -->
     <header>
-      <a href="#" class="logo">Save Me <span>Please!!</span></a>
       <nav class="navbar">
-          <ul>
-              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-                  <path d="M12.031 0.102022C11.71 0.103022 11.355 0.247022 11.031 0.570022L5.312 7.03902H1C0.449 7.03902 0 7.48802 0 8.03902V16.039C0 16.59 0.449 17.039 1 17.039H5.313L11 23.477C12 24.477 13 23.965 13 22.602V1.31902C13 0.528022 12.567 0.0970217 12.031 0.100022V0.102022ZM19.281 2.10202C19.0683 2.13912 18.8734 2.24406 18.7253 2.40114C18.5772 2.55822 18.4839 2.75902 18.4593 2.97351C18.4348 3.188 18.4803 3.40468 18.5891 3.59114C18.698 3.77761 18.8642 3.92386 19.063 4.00802C20.5507 4.75595 21.8006 5.90351 22.6726 7.32202C23.5447 8.74053 24.0043 10.3739 24 12.039C24 15.563 22 18.589 19.062 20.07C18.9283 20.1165 18.806 20.1909 18.7032 20.2882C18.6004 20.3855 18.5194 20.5036 18.4656 20.6345C18.4118 20.7655 18.3865 20.9063 18.3912 21.0478C18.3959 21.1893 18.4306 21.3282 18.493 21.4552C18.5554 21.5823 18.644 21.6947 18.7531 21.7849C18.8622 21.8752 18.9892 21.9412 19.1257 21.9787C19.2622 22.0163 19.4051 22.0244 19.5449 22.0025C19.6848 21.9807 19.8184 21.9294 19.937 21.852C23.53 20.039 26 16.327 26 12.039C26 7.75102 23.529 4.03902 19.937 2.22602C19.7659 2.13051 19.5704 2.08739 19.375 2.10202C19.3437 2.10055 19.3123 2.10055 19.281 2.10202ZM16.906 5.97602C16.6907 5.99183 16.4863 6.07691 16.3233 6.21852C16.1603 6.36014 16.0476 6.5507 16.0019 6.76171C15.9562 6.97272 15.98 7.19285 16.0698 7.38919C16.1596 7.58554 16.3105 7.74755 16.5 7.85102C18.043 8.81002 19 10.329 19 12.039C19 13.761 18.028 15.3 16.469 16.258C16.3465 16.3219 16.2386 16.4105 16.1521 16.5182C16.0655 16.6258 16.0022 16.7503 15.9662 16.8836C15.9301 17.017 15.9221 17.1564 15.9426 17.293C15.9631 17.4296 16.0117 17.5605 16.0853 17.6774C16.1588 17.7943 16.2559 17.8947 16.3702 17.9722C16.4845 18.0498 16.6137 18.1028 16.7495 18.1279C16.8853 18.1531 17.0249 18.1498 17.1594 18.1183C17.2939 18.0868 17.4204 18.0278 17.531 17.945C19.601 16.675 21 14.515 21 12.039C21 9.57802 19.613 7.40602 17.562 6.13302C17.3944 6.02598 17.1988 5.97132 17 5.97602C16.9687 5.97455 16.9373 5.97455 16.906 5.97602Z" fill="white"/>
-              </svg></a>
-              </li>
-              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-                  <path d="M13.576 17.271L8.46602 14.484C7.97551 14.9709 7.35183 15.3017 6.67361 15.4346C5.99538 15.5676 5.29298 15.4968 4.65494 15.2311C4.01691 14.9654 3.47181 14.5168 3.08837 13.9418C2.70492 13.3668 2.50031 12.6911 2.50031 12C2.50031 11.3089 2.70492 10.6332 3.08837 10.0582C3.47181 9.48317 4.01691 9.03455 4.65494 8.76889C5.29298 8.50322 5.99538 8.43241 6.67361 8.56536C7.35183 8.69832 7.97551 9.02909 8.46602 9.51599L13.576 6.72899C13.4008 5.90672 13.5273 5.04885 13.9326 4.31224C14.3379 3.57563 14.9948 3.00952 15.7831 2.71742C16.5715 2.42532 17.4386 2.42676 18.226 2.72147C19.0134 3.01619 19.6684 3.58448 20.0712 4.32243C20.4741 5.06037 20.5978 5.91866 20.4198 6.74034C20.2418 7.56202 19.774 8.29218 19.1019 8.79729C18.4298 9.3024 17.5984 9.54871 16.7596 9.49119C15.9209 9.43366 15.1308 9.07613 14.534 8.48399L9.42402 11.271C9.52581 11.7513 9.52581 12.2477 9.42402 12.728L14.534 15.516C15.1308 14.9238 15.9209 14.5663 16.7596 14.5088C17.5984 14.4513 18.4298 14.6976 19.1019 15.2027C19.774 15.7078 20.2418 16.438 20.4198 17.2596C20.5978 18.0813 20.4741 18.9396 20.0712 19.6776C19.6684 20.4155 19.0134 20.9838 18.226 21.2785C17.4386 21.5732 16.5715 21.5747 15.7831 21.2826C14.9948 20.9905 14.3379 20.4243 13.9326 19.6877C13.5273 18.9511 13.4008 18.0933 13.576 17.271Z" fill="white"/>
-              </svg></a></li>
-          </ul>
+        <a href="#" class="logo">Save Me <span>Please!!</span></a>
+        <ul>
+          <li>
+            <a href="#"><img src="assets/sound.svg" alt="sound" /></a>
+          </li>
+          <li>
+            <a href="#">Share<img src="assets/share.svg" alt="share" /></a>
+          </li>
+        </ul>
       </nav>
-  </header>
-
-  <div class="container">
-    <div class="popup-rules">
-      <img src="assets/icon-rules.svg" />
-      <h2>Game Rules</h2>
-      <ol>
-        <li>Klik tombol START di bawah untuk memulai permainan.</li>
-        <li>Anda diberikan 5 kali kesempatan untuk menjawab pertanyaan.</li>
-        <li>
-          Jika Anda BENAR, maka game akan berlanjut ke soal selanjutnya.
-        </li>
-        <li>
-          Jika Anda SALAH setelah 5 kali kesempatan menjawab, maka Anda akan diberitahu<br>
-          jawaban dari pertanyaan tersebut kemudian diarahkan ke soal selanjutnya.
-        </li>
-        <li>Diakhir game akan terdapat hasil dari apa yang kamu kerjakan.</li>
-        <li>Enjoy the game, let's jumped to the questions.</li>
-      </ol>
-      <button type="button" class="btn-start">START</button>
+    </header>
+    <div class="wrapper">
+      <div class="card">
+        <div class="popup-rules">
+          <img src="assets/icon-rules.svg" />
+          <div class="card-rules">
+            <h2>Game Rules</h2>
+            <p>1. Klik tombol start dibawah.</p>
+            <p>2. Kerjakan soal dengan benar.</p>
+            <p>
+              3. kamu diberikan 5 kali kesempatan untuk menjawab pertanyaan.
+            </p>
+            <p>4. Setiap pertanyaan diberi kesempatan menjawab 5 kali.</p>
+            <p>
+              5. Jika kamu benar maka game akan berlanjut ke soal selanjutnya.
+            </p>
+            <p>
+              6. Jika kamu salah sebanyak 5x maka kamu akan diarahkan ke soal
+              selanjutnya.
+            </p>
+            <p>
+              7. Diakhir game terdapat keterangan atau result dari apa yang kamu
+              kerjakan.
+            </p>
+            <p>8. Enjoy the game, let’s jumped to the questions.</p>
+          </div>
+        </div>
+        <button type="button" class="btn-start">START</button>
+      </div>
+      <div class="img-animal">
+        <img src="./assets/dino.svg" alt="dino" class="dino" />
+        <img src="./assets/octopus.svg" alt="dino" class="dino" />
+      </div>
     </div>
-  </div>
-
-  <div class="footer">
+    <!-- <div class="footer">
     <img class="dino" src="assets/dino.svg">
     <p>Made with <svg height="20" viewBox="0 0 24 24" width="20"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" fill="#B71C1C"></path></svg> by us </p>
     <img class="octopus" src="assets/octopus.svg">
-  </div>
+  </div> -->
 
     <script type="module" src="./js/main.js"></script>
   </body>
