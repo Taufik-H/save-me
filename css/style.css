@@ -254,4 +254,140 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
+
+
+.container-2 {
+  margin-top: 800px;
+  width: 850px;
+  background: white;
+  display: flex;
+  gap: 70px;
+  display: flex;
+  padding: 60px 40px;
+  border-radius: 10px;
+}
+
+.hangman-box img {
+  width: 270px;
+}
+
+.hangman-box h1 {
+  font-size: 1.45rem;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.shapes-1 {
+  width: 100px;
+  height: 30px;
+  background-color: #3b82f6;
+  border-radius: 20px;
+  justify-items: center;
+  border: 2px solid black;
+}
+
+.shapes-1 h2 {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  color: white;
+  font-size: 20px;
+  margin-top: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.word-display {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+.word-display .letter {
+  margin-top: 40px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: lowercase;
+  width: 28px;
+  border-bottom: 3px solid #000;
+}
+
+.word-display .letter.guessed {
+  border-color: transparent;
+  margin-bottom: 20px;
+}
+
+.game-box h4{
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.game-box .shapes-2 .game-answer{
+  width: 165px;
+  height: 30px;
+  background-color: yellow;
+  border-radius: 20px;
+  justify-items: center;
+  border: 1px solid black;
+  margin-top: 50px;
+}
+
+.game-box .shapes-2 .game-answer img{
+  width: fit-content;
+  position: relative;
+  margin-top: 4px;
+}
+
+.game-box .hint-text{
+  margin-top: 20px;
+  font-size: 25px;
+  font: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.game-box h4 b {
+  font-weight: 600;
+}
+
+.game-box .guesses-text b{
+  color: red;
+}
+
+.game-input {
+  position: absolute;
+}
+
+input{
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+input[type="text"]{
+  background: #fff;
+  width: 300px;
+  height: 50px;
+  padding: 0 25px;
+  border-radius: 25px 0 0 25px;
+}
+
+input[type="submit"]{
+  position: relative;
+  left: -5px;
+  border-radius: 0 25px 25px 0;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  background: #ffc107;
+}
+
+input[type="submit"]:hover{
+  background: #ff5722;
+}
+
 /* end img-animal */
+
