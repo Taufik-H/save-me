@@ -44,53 +44,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.flex {
+  display: flex;
+}
 /* responsive */
-
-/* Small devices (640px and up) */
-@media (min-width: 640px) {
-}
-
-/* Medium devices (768px and up) */
-@media (min-width: 768px) {
-  body {
-    overflow: hidden;
-    width: 100%;
-  }
-  .wrapper {
-    margin: 300px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-  }
-  .card {
-    max-width: 700px;
-    min-width: 300px;
-  }
-}
-
-/* Large devices (1024px and up) */
-@media (min-width: 1024px) {
-  body {
-    overflow: hidden;
-    width: 100%;
-  }
-  .wrapper {
-    margin: -30px auto;
-    display: block;
-  }
-  .card {
-    max-width: 700px;
-    min-width: 300px;
-  }
-  .img-animal {
-    top: -1000px;
-  }
-}
-
-/* Extra large devices (1280px and up) */
-@media (min-width: 1280px) {
-}
 
 body {
   margin: 0 auto;
@@ -153,39 +110,101 @@ header {
 /* navbar */
 
 .card {
-  width: 100%;
-  margin: 30px auto;
-  height: 100%;
+  width: fit-content;
+  margin: 0 auto;
   background-color: var(--white);
   border-radius: 30px;
   box-shadow: 4px 4px 28px 0px rgba(19, 25, 79, 0.25);
   padding: 10px;
 }
-h2 {
+.card-username {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-username img {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+}
+.input-username {
+  margin-top: 50px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+.input-username input {
+  width: 100%;
+  font-size: var(--xl);
+  height: 50px;
+  padding: 5px;
+  outline: none;
+  border-radius: 15px;
+  border: 3px solid #bebebe;
+  justify-content: center;
+  background-color: #f2f1f1;
+  color: var(--blue);
+  font-weight: var(--bold);
+  margin-right: 5px;
+}
+.input-username input:focus {
+  background-color: white;
+  border: 3px solid var(--blue);
+  transition: all 0.2s;
+}
+#username {
+  font-size: var(--xl);
+  font-weight: var(--bold);
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+.input-username button {
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  border: 3px solid #0f172a;
+  font-size: var(--medium);
+  cursor: pointer;
+  font-weight: var(--bold);
+  background-image: var(--gradient-yellow);
+}
+.popup-hidden {
+  visibility: hidden;
+  position: absolute;
+}
+.popup-swow {
+  visibility: visible;
+}
+.popup-rules h2 {
   text-align: center;
   margin: 10px;
 }
 
 .popup-rules {
-  font-size: var(--lg);
+  font-size: var(--semibold);
   padding: 0 5px;
 }
 .card-rules {
   border: 3px solid #ececec;
   border-radius: 10px;
-  width: 100%;
+  width: fit-content;
   padding: 10px;
 }
 .card-rules p {
-  font-size: var(--normal);
+  font-size: var(--sm);
 }
 
-.popup-rules img {
-  width: 100px;
+.round-image {
+  width: 70px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -50px;
+  margin-top: -40px;
   border-radius: 50%;
 }
 
@@ -255,139 +274,4 @@ h2 {
   justify-content: space-between;
 }
 
-
-.container-2 {
-  margin-top: 800px;
-  width: 850px;
-  background: white;
-  display: flex;
-  gap: 70px;
-  display: flex;
-  padding: 60px 40px;
-  border-radius: 10px;
-}
-
-.hangman-box img {
-  width: 270px;
-}
-
-.hangman-box h1 {
-  font-size: 1.45rem;
-  margin-top: 20px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.shapes-1 {
-  width: 100px;
-  height: 30px;
-  background-color: #3b82f6;
-  border-radius: 20px;
-  justify-items: center;
-  border: 2px solid black;
-}
-
-.shapes-1 h2 {
-  position: absolute;
-  width: 100px;
-  height: 30px;
-  color: white;
-  font-size: 20px;
-  margin-top: 2px;
-  text-align: center;
-  text-transform: uppercase;
-}
-.word-display {
-  display: flex;
-  gap: 10px;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-}
-.word-display .letter {
-  margin-top: 40px;
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  text-transform: lowercase;
-  width: 28px;
-  border-bottom: 3px solid #000;
-}
-
-.word-display .letter.guessed {
-  border-color: transparent;
-  margin-bottom: 20px;
-}
-
-.game-box h4{
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-.game-box .shapes-2 .game-answer{
-  width: 165px;
-  height: 30px;
-  background-color: yellow;
-  border-radius: 20px;
-  justify-items: center;
-  border: 1px solid black;
-  margin-top: 50px;
-}
-
-.game-box .shapes-2 .game-answer img{
-  width: fit-content;
-  position: relative;
-  margin-top: 4px;
-}
-
-.game-box .hint-text{
-  margin-top: 20px;
-  font-size: 25px;
-  font: bold;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.game-box h4 b {
-  font-weight: 600;
-}
-
-.game-box .guesses-text b{
-  color: red;
-}
-
-.game-input {
-  position: absolute;
-}
-
-input{
-  position: relative;
-  display: inline-block;
-  font-size: 20px;
-  box-sizing: border-box;
-  transition: .5s;
-}
-
-input[type="text"]{
-  background: #fff;
-  width: 300px;
-  height: 50px;
-  padding: 0 25px;
-  border-radius: 25px 0 0 25px;
-}
-
-input[type="submit"]{
-  position: relative;
-  left: -5px;
-  border-radius: 0 25px 25px 0;
-  width: 100px;
-  height: 50px;
-  cursor: pointer;
-  background: #ffc107;
-}
-
-input[type="submit"]:hover{
-  background: #ff5722;
-}
-
 /* end img-animal */
-
