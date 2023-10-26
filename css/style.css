@@ -395,7 +395,7 @@ header {
 
 /* share */
 .popup-share {
-  background: #fff;
+  background: var(--white);
   padding: 25px;
   border-radius: 15px;
   max-width: 500px;
@@ -424,13 +424,14 @@ header {
 }
 
 .popup-share header {
+  padding: 0;
   padding-bottom: 15px;
   border-bottom: 1px solid #f2f3fb;
 }
 
 header span {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: var(--2xl);
+  font-weight: var(--bold);
 }
 
 header .close-share, .icons-share a{
@@ -457,7 +458,7 @@ header .close-share:hover {
 }
 
 .content-share p {
-  font-size: 20px;
+  font-size: var(--lg);
 }
 
 .content-share .icons-share {
@@ -467,7 +468,7 @@ header .close-share:hover {
 .icons-share a {
   height: 60px;
   width: 60px;
-  font-size: 25px;
+  font-size: var(--2xl);
   border: 1px solid transparent;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -506,7 +507,7 @@ header .close-share:hover {
 }
 
 .icons-share a:hover {
-  color: #fff;
+  color: var(--white);
   border-color: transparent;
 }
 
@@ -527,17 +528,17 @@ header .close-share:hover {
 }
 
 .field-share.active {
-  border-color: blue; /* */
+  border-color: var(--blue-dark); 
 }
 
 .field-share i {
   width: 50px;
   text-align: center;
-  font-size: 24px;
+  font-size: var(--2xl);
 }
 
 .field-share.active i {
-  color: blue;
+  color: var(--blue-dark);
 }
 
 .field-share input {
@@ -545,16 +546,16 @@ header .close-share:hover {
   outline: none;
   height: 100%;
   width: 100%;
-  font-size: 20px;
+  font-size: var(--lg);
 }
 
 .field-share button {
   padding: 5px 20px;
-  color: #fff;
-  background: blue; /* nanti ganti */
+  color: var(--white);
+  background: var(--blue-dark);
   border-radius: 4px;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: var(--medium);
+  font-size: var(--lg);
   cursor: pointer;
   border: 2px solid transparent;
 }
