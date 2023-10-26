@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome//5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMP | Save Me Please!</title>
   </head>
@@ -17,7 +19,7 @@
             <a href="#"><img src="assets/sound.svg" alt="sound" /></a>
           </li>
           <li>
-            <a href="#">Share<img src="assets/share.svg" alt="share" /></a>
+            <a href="#" class="share">Share<img src="assets/share.svg" alt="share" /></a>
           </li>
         </ul>
       </nav>
@@ -110,8 +112,31 @@
         by us
       </p>
     </div>
+    <!-- share -->
+    <div class="popup-share">
+      <header>
+          <span>SMP | Save Me Please</span>
+          <div class="close-share"><i class="uil uil-times"></i></div>
+      </header>
+      <div class="content-share">
+          <p>Share this link via :</p>
+          <ul class="icons-share">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </ul>
+          <p>Copy link :</p>
+          <div class="field-share">
+              <i class="uil uil-link"></i>
+              <input type="text" value="savemeplease.com">
+              <button>Copy</button>
+          </div>
+      </div>
+  </div>
 
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/share.js"></script>
     <!-- <script type="module" src="./js/game.js"></script> -->
   </body>
 </html>
