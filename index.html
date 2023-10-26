@@ -7,7 +7,7 @@
     <title>SMP | Save Me Please!</title>
   </head>
 
-  <body>
+  <body id="app">
     <!-- navbar  -->
     <header>
       <nav class="navbar">
@@ -23,9 +23,9 @@
       </nav>
     </header>
     <div class="wrapper">
-      <div class="card">
+      <div id="rules" class="card popup-hidden">
         <div class="popup-rules">
-          <img src="assets/icon-rules.svg" />
+          <img src="assets/icon-rules.svg" class="round-image" />
           <div class="card-rules">
             <h2>Game Rules</h2>
             <p>1. Klik tombol start dibawah.</p>
@@ -50,9 +50,52 @@
         </div>
         <button type="button" class="btn-start">START</button>
       </div>
-      <div class="img-animal">
-        <img src="./assets/dino.svg" alt="dino" class="dino" />
-        <img src="./assets/octopus.svg" alt="dino" class="dino" />
+      <!-- nama -->
+      <div class="card popup-hidden">
+        <div class="">
+          <div class="card-username">
+            <img src="/assets/icon-rules.svg" alt="round-image" />
+          </div>
+          <div class="input-username">
+            <label for="username" id="username" name="username"
+              >Masukan nama kamu</label
+            >
+            <div class="flex">
+              <input type="text" />
+              <button>Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question-board">
+        <div class="question-total-soal">1/5</div>
+        <div class="question">
+          <p>Lorem ipsum dolor sit ametLorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="card">
+          <div class="question-board-content">
+            <div class="guess">
+              <p class="word"></p>
+              <p class="word"></p>
+              <p class="word"></p>
+              <p class="word"></p>
+              <p class="word"></p>
+            </div>
+            <div class="question-img">
+              <img src="/assets/balon5.svg" alt="image-balon" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="answer-title">
+          <img src="/assets/pencil.svg" alt="pencil" />
+          <p>Jawab pertanyaan</p>
+        </div>
+        <div class="answer-input">
+          <input type="text" placeholder="Tulis jawabanmu disini..." />
+          <button>kirim</button>
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -68,46 +111,7 @@
       </p>
     </div>
 
-  <div class="container-2">
-    <div class="question-box">
-        <img src="assets/balon5.svg" alt="question-img">
-        <h1>Kotak pertanyaan</h1>
-    </div>
-    <div class="game-box">
-        <div class="shapes-1">
-            <h2>1/5</h2>
-        </div>
-        <h4 class="hint-text">
-            <b>Hewan apa yang paling hening? </b>
-        <ul class="word-display">
-            <li class="letter"></li>
-            <li class="letter"></li>
-            <li class="letter guessed">m</li>
-            <li class="letter"></li>
-            <li class="letter"></li>
-            <li class="letter guessed">e</li>
-        </ul>
-        <h4 class="guesses-text">
-            Kesalahan:
-            <b>0/5</b>
-        </h4>
-        </h4>
-        <div class="shapes-2">
-                <h4 class="game-answer">
-                    <img src="assets/pencil.svg" alt="answer-img">
-                    Jawab pertanyaan
-                </h4>
-        </div>
-        <div class="game-input">
-                <form action="#">
-                    <input type="text" name="" placeholder="Tulis jawabanmu disini...">
-                    <input type="submit" name="" value="kirim"> 
-                </form>
-            </div>
-    </div>
-</div>
-
     <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/game.js"></script>
+    <!-- <script type="module" src="./js/game.js"></script> -->
   </body>
 </html>
