@@ -230,17 +230,32 @@ header {
   height: 300px;
 }
 .question-board-content .guess {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
   gap: 10px;
 }
+
 .question-board-content .guess .word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 5px solid var(--text);
   width: 20px;
-  border-radius: 10px;
+  height: 40px;
 }
+
+.question-board-content .guess .word-fill {
+  font-size: var(--3xl);
+  font-weight: var(--bold);
+}
+
+.question-board-content .guess .word:not(:empty) {
+  border-bottom: none;
+}
+
 .question-img {
   width: 100%;
   height: 100%;
@@ -408,7 +423,7 @@ header {
   pointer-events: none;
 }
 
-.popup-share.show{
+.popup-share.show {
   opacity: 1;
   pointer-events: auto;
   position: absolute;
@@ -434,7 +449,8 @@ header span {
   font-weight: var(--bold);
 }
 
-header .close-share, .icons-share a{
+header .close-share,
+.icons-share a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -528,7 +544,7 @@ header .close-share:hover {
 }
 
 .field-share.active {
-  border-color: var(--blue-dark); 
+  border-color: var(--blue-dark);
 }
 
 .field-share i {
@@ -568,7 +584,7 @@ header .close-share:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px); 
-  z-index: 1; 
+  backdrop-filter: blur(5px);
+  z-index: 1;
 }
 /* end share */
