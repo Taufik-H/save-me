@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome//5.15.3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome//5.15.3/css/all.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMP | Save Me Please!</title>
   </head>
@@ -19,13 +25,15 @@
             <a href="#"><img src="assets/sound.svg" alt="sound" /></a>
           </li>
           <li>
-            <a href="#" class="share">Share<img src="assets/share.svg" alt="share" /></a>
+            <a href="#" class="share"
+              >Share<img src="assets/share.svg" alt="share"
+            /></a>
           </li>
         </ul>
       </nav>
     </header>
     <div class="wrapper">
-      <div id="rules" class="card popup-hidden">
+      <div id="rules" class="card">
         <div class="popup-rules">
           <img src="assets/icon-rules.svg" class="round-image" />
           <div class="card-rules">
@@ -50,52 +58,52 @@
             <p>8. Enjoy the game, let’s jumped to the questions.</p>
           </div>
         </div>
-        <button type="button" class="btn-start">START</button>
+        <button type="button" class="btn-start start">START</button>
       </div>
       <!-- nama -->
-      <div class="card popup-hidden">
+      <div class="card popup-hidden" id="uname">
         <div class="">
           <div class="card-username">
             <img src="/assets/icon-rules.svg" alt="round-image" />
           </div>
-          <div class="input-username">
-            <label for="username" id="username" name="username"
-              >Masukan nama kamu</label
-            >
-            <div class="flex">
-              <input type="text" />
-              <button>Submit</button>
+          <form action="">
+            <div class="input-username">
+              <label for="username" id="username" name="username"
+                >Masukan nama kamu</label
+              >
+              <div class="flex">
+                <input id="usernameInput" type="text" />
+                <button id="btnUsername">Submit</button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
-      <div class="question-board">
+      <div class="question-board popup-hidden">
         <div class="question-total-soal">1/5</div>
         <div class="question">
           <p>Lorem ipsum dolor sit ametLorem ipsum dolor sit amet.</p>
         </div>
         <div class="card">
           <div class="question-board-content">
-            <div class="guess">
-              <p class="word"></p>
-              <p class="word"></p>
-              <p class="word"></p>
-              <p class="word"></p>
-              <p class="word"></p>
-            </div>
+            <div class="guess"></div>
             <div class="question-img">
               <img src="/assets/balon5.svg" alt="image-balon" />
             </div>
           </div>
         </div>
       </div>
-      <div class="card">
+      <div id="answer" class="card popup-hidden">
         <div class="answer-title">
           <img src="/assets/pencil.svg" alt="pencil" />
           <p>Jawab pertanyaan</p>
         </div>
         <div class="answer-input">
-          <input type="text" placeholder="Tulis jawabanmu disini..." />
+          <input
+            type="text"
+            id="answer-input"
+            placeholder="Tulis jawabanmu disini..."
+          />
           <button>kirim</button>
         </div>
       </div>
@@ -130,7 +138,7 @@
           <p>Copy link :</p>
           <div class="field-share">
             <i class="uil uil-link"></i>
-            <input type="text" value="savemeplease.com">
+            <input type="text" value="savemeplease.com" />
             <button>Copy</button>
           </div>
         </div>
@@ -139,6 +147,7 @@
     <!-- end share -->
 
     <script type="module" src="./js/main.js"></script>
+    <!-- <script type="module" src="./js/game.js"></script> -->
     <script type="module" src="./js/share.js"></script>
     <!-- <script type="module" src="./js/game.js"></script> -->
   </body>
