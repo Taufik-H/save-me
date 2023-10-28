@@ -17,133 +17,164 @@
   </head>
 
   <body id="app">
-    <!-- navbar  -->
-    <header>
-      <nav class="navbar">
-        <a href="#" class="logo">Save Me <span>Please!!</span></a>
-        <ul>
-          <li>
-            <a href="#"><img src="assets/sound.svg" alt="sound" /></a>
-          </li>
-          <li>
-            <a href="#" class="share"
-              >Share<img src="assets/share.svg" alt="share"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <div class="wrapper">
-      <div id="rules" class="card">
-        <div class="popup-rules">
-          <img src="assets/icon-rules.svg" class="round-image" />
-          <div class="card-rules">
-            <h2>Game Rules</h2>
-            <p>1. Klik tombol start dibawah.</p>
-            <p>2. Kerjakan soal dengan benar.</p>
-            <p>
-              3. kamu diberikan 5 kali kesempatan untuk menjawab pertanyaan.
-            </p>
-            <p>4. Setiap pertanyaan diberi kesempatan menjawab 5 kali.</p>
-            <p>
-              5. Jika kamu benar maka game akan berlanjut ke soal selanjutnya.
-            </p>
-            <p>
-              6. Jika kamu salah sebanyak 5x maka kamu akan diarahkan ke soal
-              selanjutnya.
-            </p>
-            <p>
-              7. Diakhir game terdapat keterangan atau result dari apa yang kamu
-              kerjakan.
-            </p>
-            <p>8. Enjoy the game, let’s jumped to the questions.</p>
+    <div class="page-container">
+      <!-- navbar  -->
+      <header>
+        <nav class="navbar">
+          <a href="#" class="logo">Save Me <span>Please!!</span></a>
+          <ul>
+            <li>
+              <a href="#"><img src="assets/sound.svg" alt="sound" /></a>
+            </li>
+            <li>
+              <a href="#" class="share"
+                >Share<img src="assets/share.svg" alt="share"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="wrapper">
+        <div id="rules" class="card">
+          <div class="popup-rules">
+            <img src="assets/icon-rules.svg" class="round-image" />
+            <div class="card-rules">
+              <h2>Game Rules</h2>
+              <p>1. Klik tombol start dibawah.</p>
+              <p>2. Kerjakan soal dengan benar.</p>
+              <p>
+                3. kamu diberikan 5 kali kesempatan untuk menjawab pertanyaan.
+              </p>
+              <p>4. Setiap pertanyaan diberi kesempatan menjawab 5 kali.</p>
+              <p>
+                5. Jika kamu benar maka game akan berlanjut ke soal selanjutnya.
+              </p>
+              <p>
+                6. Jika kamu salah sebanyak 5x maka kamu akan diarahkan ke soal
+                selanjutnya.
+              </p>
+              <p>
+                7. Diakhir game terdapat keterangan atau result dari apa yang
+                kamu kerjakan.
+              </p>
+              <p>8. Enjoy the game, let’s jumped to the questions.</p>
+            </div>
+          </div>
+          <button type="button" class="btn-start start">START</button>
+        </div>
+        <!-- nama -->
+        <div class="card popup-hidden" id="uname">
+          <div class="">
+            <div class="card-username">
+              <img src="/assets/icon-rules.svg" alt="round-image" />
+            </div>
+            <form action="">
+              <div class="input-username">
+                <label for="username" id="username" name="username"
+                  >Masukan nama kamu</label
+                >
+                <div class="flex">
+                  <input id="usernameInput" type="text" />
+                  <button id="btnUsername">Submit</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
-        <button type="button" class="btn-start start">START</button>
-      </div>
-      <!-- nama -->
-      <div class="card popup-hidden" id="uname">
-        <div class="">
-          <div class="card-username">
-            <img src="/assets/icon-rules.svg" alt="round-image" />
+        <div class="question-board popup-hidden">
+          <div class="question-total-soal">1/5</div>
+          <div class="question">
+            <p>Lorem ipsum dolor sit ametLorem ipsum dolor sit amet.</p>
           </div>
-          <form action="">
-            <div class="input-username">
-              <label for="username" id="username" name="username"
-                >Masukan nama kamu</label
-              >
-              <div class="flex">
-                <input id="usernameInput" type="text" />
-                <button id="btnUsername">Submit</button>
+          <div class="card">
+            <div class="question-board-content">
+              <div class="guess"></div>
+              <div class="question-img">
+                <img src="/assets/balon5.svg" alt="image-balon" id="char" />
               </div>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-      <div class="question-board popup-hidden">
-        <div class="question-total-soal">1/5</div>
-        <div class="question">
-          <p>Lorem ipsum dolor sit ametLorem ipsum dolor sit amet.</p>
+        <div id="answer" class="card popup-hidden">
+          <div class="answer-title">
+            <img src="/assets/pencil.svg" alt="pencil" />
+            <p>Jawab pertanyaan</p>
+          </div>
+          <div class="answer-input">
+            <input
+              type="text"
+              id="answer-input"
+              placeholder="Tulis jawabanmu disini..."
+            />
+            <button id="submitAnswer">kirim</button>
+          </div>
         </div>
-        <div class="card">
-          <div class="question-board-content">
-            <div class="guess"></div>
-            <div class="question-img">
-              <img src="/assets/balon5.svg" alt="image-balon" id="char" />
+        <!-- result -->
+        <div class="result-board popup-hidden">
+          <div class="result-title">Game <span>result</span></div>
+
+          <div class="card">
+            <div class="question-board-content">
+              <div class="result-data">
+                <p>Total soal</p>
+                <p>5</p>
+              </div>
+              <div class="result-data">
+                <p>Total percobaan</p>
+                <p>0</p>
+                <!-- Nilai ini akan diubah oleh JavaScript -->
+              </div>
+              <div class="result-data">
+                <p>Soal terjawab</p>
+                <p>5</p>
+              </div>
+              <div class="result-data">
+                <p>Jawaban benar</p>
+                <p>0</p>
+                <!-- Nilai ini akan diubah oleh JavaScript -->
+              </div>
+              <div class="result-data">
+                <p>Jawaban salah</p>
+                <p>0</p>
+                <!-- Nilai ini akan diubah oleh JavaScript -->
+              </div>
+              <div class="result-data">
+                <p>Winrate keseluruhan</p>
+                <p>0%</p>
+                <!-- Nilai ini akan diubah oleh JavaScript -->
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="answer" class="card popup-hidden">
-        <div class="answer-title">
-          <img src="/assets/pencil.svg" alt="pencil" />
-          <p>Jawab pertanyaan</p>
-        </div>
-        <div class="answer-input">
-          <input
-            type="text"
-            id="answer-input"
-            placeholder="Tulis jawabanmu disini..."
-          />
-          <button id="submitAnswer">kirim</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <p>
-        Made with
-        <svg height="20" viewBox="0 0 24 24" width="20">
-          <path
-            d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"
-            fill="#B71C1C"
-          ></path>
-        </svg>
-        by us
-      </p>
-    </div>
-    <!-- share -->
-    <div id="blur" class="blur">
-      <div class="popup-share">
-        <header>
-          <span>SMP | Save Me Please</span>
-          <div class="close-share"><i class="uil uil-times"></i></div>
-        </header>
-        <div class="content-share">
-          <p>Share this link via :</p>
-          <ul class="icons-share">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-          </ul>
-          <p>Copy link :</p>
-          <div class="field-share">
-            <i class="uil uil-link"></i>
-            <input type="text" value="savemeplease.com" />
-            <button>Copy</button>
+
+      <!-- share -->
+      <div id="blur" class="blur">
+        <div class="popup-share">
+          <header>
+            <span>SMP | Save Me Please</span>
+            <div class="close-share"><i class="uil uil-times"></i></div>
+          </header>
+          <div class="content-share">
+            <p>Share this link via :</p>
+            <ul class="icons-share">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </ul>
+            <p>Copy link :</p>
+            <div class="field-share">
+              <i class="uil uil-link"></i>
+              <input type="text" value="savemeplease.com" />
+              <button>Copy</button>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- end share -->
+
     </div>
     <!-- jawaban salah -->
     <div class="container">
@@ -165,6 +196,20 @@
       </div>
     </div>
 
+
+      <div class="footer">
+        <p>
+          Made with
+          <svg height="20" viewBox="0 0 24 24" width="20">
+            <path
+              d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"
+              fill="#B71C1C"
+            ></path>
+          </svg>
+          by us
+        </p>
+      </div>
+    </div>
     <script type="module" src="./js/main.js"></script>
     <!-- <script type="module" src="./js/game.js"></script> -->
     <script type="module" src="./js/share.js"></script>

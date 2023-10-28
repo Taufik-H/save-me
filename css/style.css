@@ -48,23 +48,18 @@
   display: flex;
 }
 /* responsive */
-
+body,
+html {
+  height: 100%;
+}
 body {
   margin: 0 auto;
   padding: 0;
   background-color: var(--blue);
   background-image: url(../assets/textura.svg);
-
   max-width: 1280px;
 }
-/* container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-/* container */
+
 /* navbar */
 header {
   width: 100%;
@@ -192,6 +187,51 @@ header {
   border-radius: 20px;
   margin-bottom: 10px;
 }
+.result-board {
+  display: flex;
+  width: fit-content;
+  padding: 10px;
+  background-color: var(--orange);
+  background-image: url("/assets/puzzle-orange.svg");
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.result-title {
+  font-size: var(--xl);
+  font-weight: var(--bold);
+  background-color: var(--white);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  width: 100%;
+  gap: 5px;
+  text-transform: uppercase;
+}
+.result-title span {
+  color: var(--blue);
+}
+.result-data {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.result-data:hover {
+  background-color: #e1e1e1;
+  border-radius: 7px;
+  transition: all 0.5s;
+}
+.result-data p {
+  font-size: var(--lg);
+  font-weight: var(--semibold);
+}
 .question-total-soal {
   display: flex;
   width: 100px;
@@ -306,11 +346,11 @@ header {
   object-fit: contain;
 }
 .popup-hidden {
-  visibility: hidden;
+  display: none;
   position: absolute;
 }
 .popup-swow {
-  visibility: visible;
+  display: block;
 }
 .popup-rules h2 {
   text-align: center;
@@ -363,9 +403,21 @@ header {
   transform: scale(1.05);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.wrapper {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
 .footer {
   display: flex;
+  padding: 10px;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -585,6 +637,60 @@ header .close-share:hover {
 }
 /* end share */
 
+
+/* responsive */
+/*... CSS Anda sebelumnya ...*/
+
+/* Breakpoints */
+/* Small (sm) */
+@media (max-width: 640px) {
+  .footer {
+    padding: 10px 5px;
+    text-align: center;
+  }
+
+  .card,
+  .popup-share {
+    width: 95%;
+    margin: 15px auto;
+    box-sizing: border-box;
+  }
+
+  .input-username,
+  .answer-input {
+    width: 100%;
+  }
+
+  .card-username img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .input-username {
+    margin-top: 40px;
+  }
+}
+
+/* Medium (md) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px 10px;
+  }
+
+  .card,
+  .popup-share {
+    width: 90%;
+  }
+}
+
+/* Large (lg) */
+@media (max-width: 1024px) {
+}
+
+/* Extra Large (xl) */
+@media (max-width: 1280px) {
+}
+
 /* jawaban salah */
 .salah {
   height: 100%;
@@ -692,3 +798,4 @@ header .close-share:hover {
     linear-gradient(182deg, #fff622 -8.34%, #e07411 126.67%)
   );
 }
+

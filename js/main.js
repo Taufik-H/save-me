@@ -1,18 +1,18 @@
-import "../css/style.css";
 import { questions } from "./questions.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const TOTAL_QUESTIONS = 5; // total soal yang perlu dikerjakan
-
   const startBtn = document.querySelector(".btn-start");
   const usernameInput = document.querySelector("#usernameInput");
   const saveUsername = document.querySelector("#btnUsername");
   const answerInput = document.querySelector("#answer-input");
   const username = document.querySelector("#uname");
-  const questionTotalDisplay = document.querySelector(".question-total-soal");
-  const submitButton = document.querySelector("#submitAnswer");
+  const submitAnswerBtn = document.querySelector("#answer button");
+  const qboard = document.querySelector(".question-board");
+  const answerCard = document.querySelector("#answer");
 
-  let health = 5;
+  let correctAnswersCount = 0;
+  let totalAttempts = 0;
+  let winrates = [];
 
   const previousUsername = localStorage.getItem("username");
   if (previousUsername) {
@@ -36,23 +36,26 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentQuestionIndex = 0;
 
   function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
   function startGame() {
-    shuffledQuestions = shuffleArray([...questions]).slice(0, TOTAL_QUESTIONS);
+    shuffledQuestions = shuffleArray([...questions]);
     currentQuestionIndex = 0;
+
     username.classList.add("popup-hidden");
     displayQuestion();
 
-    const qboard = document.querySelector(".question-board");
-    const answerCard = document.querySelector("#answer");
     qboard.classList.remove("popup-hidden");
     answerCard.classList.remove("popup-hidden");
   }
 
   function displayQuestion() {
-    if (currentQuestionIndex < TOTAL_QUESTIONS) {
+    if (currentQuestionIndex < 5) {
       const question = shuffledQuestions[currentQuestionIndex];
       const questionElement = document.querySelector(".question p");
       questionElement.textContent = question.question;
@@ -60,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
       answerInput.setAttribute("maxlength", question.answer.length);
 
       const guessElement = document.querySelector(".guess");
-
       while (guessElement.firstChild) {
         guessElement.removeChild(guessElement.firstChild);
       }
@@ -71,59 +73,62 @@ document.addEventListener("DOMContentLoaded", function () {
         guessElement.appendChild(p);
       }
 
-      // Update tampilan soal saat ini
-      questionTotalDisplay.textContent = `${
-        currentQuestionIndex + 1
-      }/${TOTAL_QUESTIONS}`;
+      const totalSoalElement = document.querySelector(".question-total-soal");
+      totalSoalElement.textContent = `${currentQuestionIndex + 1}/5`;
     } else {
-      endGame();
+      showResults();
     }
   }
 
   answerInput.addEventListener("input", handleAnswerInput);
+  submitAnswerBtn.addEventListener("click", checkAnswer);
 
   function handleAnswerInput() {
-    const inputValue = answerInput.value;
     const wordElements = document.querySelectorAll(".guess p");
+    const inputValue = answerInput.value;
 
     wordElements.forEach((wordEl, index) => {
-      wordEl.textContent = inputValue[index] || "";
       if (inputValue[index]) {
-        wordEl.classList.add("word-fill");
+        wordEl.textContent = inputValue[index];
         wordEl.classList.remove("word");
+        wordEl.classList.add("word-fill");
       } else {
-        wordEl.classList.remove("word-fill");
+        wordEl.textContent = "";
         wordEl.classList.add("word");
       }
     });
   }
-  submitButton.addEventListener("click", function (e) {
-    e.preventDefault(); // Ini untuk mencegah reload jika tombol tersebut berada di dalam form
-    checkAnswer();
-  });
+
+  let health = 5;
+
   function checkAnswer() {
     const answer = shuffledQuestions[currentQuestionIndex].answer;
     const inputValue = answerInput.value;
-
-    if (inputValue.toLowerCase() === answer.toLowerCase()) {
-      health = 5;
-      updateImage();
+    totalAttempts++;
+    if (inputValue === answer) {
+      correctAnswersCount++;
+      let winrateForThisQuestion = 100 - 20 * (5 - health);
+      winrates.push(winrateForThisQuestion);
+      resetHealth();
       currentQuestionIndex++;
       answerInput.value = "";
       displayQuestion();
     } else {
       health--;
       updateImage();
-      if (health === 0) {
-        alert("Jawaban yang benar adalah: " + answer);
-        health = 5;
+      if (health <= 0) {
+        winrates.push(0);
+        resetHealth();
         currentQuestionIndex++;
         answerInput.value = "";
         displayQuestion();
-      } else {
-        alert("Nyawa anda tinggal " + health);
       }
     }
+  }
+
+  function resetHealth() {
+    health = 5;
+    updateImage();
   }
 
   function updateImage() {
@@ -131,7 +136,32 @@ document.addEventListener("DOMContentLoaded", function () {
     image.src = `./assets/balon${health}.svg`;
   }
 
-  function endGame() {
-    console.log("Game over!");
+  function showResults() {
+    let totalWinrate = winrates.reduce((acc, curr) => acc + curr, 0);
+    totalWinrate /= winrates.length;
+
+    const resultBoard = document.querySelector(".result-board");
+    resultBoard.querySelector(
+      ".result-data:nth-child(1) p:nth-child(2)"
+    ).textContent = "5";
+    resultBoard.querySelector(
+      ".result-data:nth-child(2) p:nth-child(2)"
+    ).textContent = totalAttempts.toString();
+    resultBoard.querySelector(
+      ".result-data:nth-child(3) p:nth-child(2)"
+    ).textContent = "5";
+    resultBoard.querySelector(
+      ".result-data:nth-child(4) p:nth-child(2)"
+    ).textContent = correctAnswersCount.toString();
+    resultBoard.querySelector(
+      ".result-data:nth-child(5) p:nth-child(2)"
+    ).textContent = (5 - correctAnswersCount).toString();
+    resultBoard.querySelector(
+      ".result-data:nth-child(6) p:nth-child(2)"
+    ).textContent = totalWinrate.toFixed(2) + "%";
+
+    qboard.classList.add("popup-hidden");
+    answerCard.classList.add("popup-hidden");
+    resultBoard.classList.remove("popup-hidden");
   }
 });
