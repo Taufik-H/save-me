@@ -164,7 +164,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function showResults() {
     let totalWinrate = winrates.reduce((acc, curr) => acc + curr, 0);
     totalWinrate /= winrates.length;
-
+    const username = localStorage.getItem("username");
+    const playerName = document.querySelector(".player-name");
+    playerName.textContent = username;
     const resultBoard = document.querySelector(".result-board");
     resultBoard.querySelector(
       ".result-data:nth-child(1) p:nth-child(2)"
@@ -189,4 +191,22 @@ document.addEventListener("DOMContentLoaded", function () {
     answerCard.classList.add("popup-hidden");
     resultBoard.classList.remove("popup-hidden");
   }
+  // result btn
+  const btnUlang = document.querySelector(".btn-ulang");
+  const btnKembali = document.querySelector(".btn-kembali");
+
+  btnUlang.addEventListener("click", function () {
+    correctAnswersCount = 0;
+    totalAttempts = 0;
+    winrates = [];
+    health = 5;
+
+    document.querySelector(".result-board").classList.add("popup-hidden");
+
+    startGame();
+  });
+
+  btnKembali.addEventListener("click", function () {
+    location.reload();
+  });
 });

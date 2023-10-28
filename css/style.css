@@ -190,6 +190,7 @@ header {
 .result-board {
   display: flex;
   width: fit-content;
+  height: auto;
   padding: 10px;
   background-color: var(--orange);
   background-image: url("/assets/puzzle-orange.svg");
@@ -825,4 +826,57 @@ header .close-share:hover {
     --Btn-Gradient,
     linear-gradient(182deg, #fff622 -8.34%, #e07411 126.67%)
   );
+}
+.player-name {
+  font-size: var(--xl);
+  font-weight: var(--bold);
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 5px;
+  background-color: var(--text);
+  width: 100%;
+  color: var(--white);
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.result-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin: 10px 0;
+  gap: 5px;
+}
+
+.btn-ulang {
+  width: 100%;
+  color: var(--text);
+  font-size: var(--lg);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  background-color: var(--yellow);
+  border: none;
+  padding: 5px;
+  border-radius: 7px;
+}
+.btn-ulang:hover {
+  background-color: rgb(255, 170, 0);
+  transition: all 0.5s;
+}
+.btn-kembali {
+  width: 100%;
+  color: var(--text);
+  font-size: var(--lg);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  background-color: var(--green);
+  border: none;
+  padding: 5px;
+  border-radius: 7px;
+}
+.btn-kembali:hover {
+  background-color: rgb(15, 169, 33);
+  transition: all 0.5s;
 }
