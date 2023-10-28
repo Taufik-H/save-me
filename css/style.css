@@ -365,13 +365,11 @@ header {
 }
 
 .footer {
-  position: fixed;
   display: flex;
-  left: 0;
-  bottom: 0;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   color: var(--white);
-  text-align: center;
 }
 
 .dino {
@@ -388,14 +386,12 @@ header {
 }
 
 .footer p {
-  color: var(--white);
   font-size: var(--xl);
-  font-weight: var(--semibold);
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  text-align: center;
+  font-weight: var(--bold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 /* img-animal */
