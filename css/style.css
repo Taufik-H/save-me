@@ -635,8 +635,8 @@ header .close-share:hover {
   backdrop-filter: blur(5px);
   z-index: 1;
 }
-/* end share */
 
+/* end share */
 
 /* responsive */
 /*... CSS Anda sebelumnya ...*/
@@ -690,17 +690,43 @@ header .close-share:hover {
 /* Extra Large (xl) */
 @media (max-width: 1280px) {
 }
+.pop-blur {
+  position: fixed; /* Atau absolute tergantung kebutuhan Anda */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0f172a3b;
+  backdrop-filter: blur(5px);
+  z-index: 9998; /* Sehingga berada di bawah .container */
+}
 
-/* jawaban salah */
+.containerpop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 .salah {
-  height: 100%;
-  width: 100%;
-  max-width: 600px;
+  pointer-events: auto;
+  z-index: 10000;
   padding: 10px 10px;
-  margin: 0 auto;
   border-radius: 20px;
   background: var(--white);
   text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  height: fit-content;
+}
+.salah button {
+  cursor: pointer;
 }
 
 .salah h1 {
@@ -754,14 +780,15 @@ header .close-share:hover {
 
 /* game complete */
 .complete {
-  height: 100%;
-  width: 100%;
-  max-width: 600px;
+  pointer-events: auto;
+  z-index: 10000;
   padding: 10px 10px;
-  margin: 0 auto;
   border-radius: 20px;
   background: var(--white);
   text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  height: fit-content;
 }
 
 .complete h1 {
@@ -782,6 +809,7 @@ header .close-share:hover {
 
 .btn-result {
   display: block;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   margin-left: auto;
@@ -798,4 +826,3 @@ header .close-share:hover {
     linear-gradient(182deg, #fff622 -8.34%, #e07411 126.67%)
   );
 }
-

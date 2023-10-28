@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitAnswerBtn = document.querySelector("#answer button");
   const qboard = document.querySelector(".question-board");
   const answerCard = document.querySelector("#answer");
+  const btnResult = document.querySelector(".btn-result");
 
   let correctAnswersCount = 0;
   let totalAttempts = 0;
@@ -46,10 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function startGame() {
     shuffledQuestions = shuffleArray([...questions]);
     currentQuestionIndex = 0;
-
     username.classList.add("popup-hidden");
     displayQuestion();
-
     qboard.classList.remove("popup-hidden");
     answerCard.classList.remove("popup-hidden");
   }
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
       questionElement.textContent = question.question;
 
       answerInput.setAttribute("maxlength", question.answer.length);
-
       const guessElement = document.querySelector(".guess");
       while (guessElement.firstChild) {
         guessElement.removeChild(guessElement.firstChild);
@@ -76,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const totalSoalElement = document.querySelector(".question-total-soal");
       totalSoalElement.textContent = `${currentQuestionIndex + 1}/5`;
     } else {
-      showResults();
+      const complete = document.querySelector(".complete");
+      showPopup(complete);
     }
   }
 
@@ -86,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleAnswerInput() {
     const wordElements = document.querySelectorAll(".guess p");
     const inputValue = answerInput.value;
-
     wordElements.forEach((wordEl, index) => {
       if (inputValue[index]) {
         wordEl.textContent = inputValue[index];
@@ -105,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const answer = shuffledQuestions[currentQuestionIndex].answer;
     const inputValue = answerInput.value;
     totalAttempts++;
+
     if (inputValue === answer) {
       correctAnswersCount++;
       let winrateForThisQuestion = 100 - 20 * (5 - health);
@@ -121,10 +120,36 @@ document.addEventListener("DOMContentLoaded", function () {
         resetHealth();
         currentQuestionIndex++;
         answerInput.value = "";
-        displayQuestion();
+        const salah = document.querySelector(".salah");
+        showPopup(salah);
+        const h3 = salah.querySelector("h3");
+        h3.textContent = `Jawaban yang benar adalah: ${answer}`;
       }
     }
   }
+
+  function showPopup(popupElement) {
+    const popBlur = document.querySelector(".pop-blur");
+    popBlur.classList.remove("popup-hidden");
+    popupElement.classList.remove("popup-hidden");
+  }
+
+  const btnNext = document.querySelector(".btn-next");
+  btnNext.addEventListener("click", function () {
+    const salah = document.querySelector(".salah");
+    const popBlur = document.querySelector(".pop-blur");
+    popBlur.classList.add("popup-hidden");
+    salah.classList.add("popup-hidden");
+    displayQuestion();
+  });
+
+  btnResult.addEventListener("click", function () {
+    const complete = document.querySelector(".complete");
+    const popBlur = document.querySelector(".pop-blur");
+    popBlur.classList.add("popup-hidden");
+    complete.classList.add("popup-hidden");
+    showResults();
+  });
 
   function resetHealth() {
     health = 5;
