@@ -2,26 +2,29 @@ import "../css/style.css";
 import { questions } from "./questions.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  const TOTAL_QUESTIONS = 5; // total soal yang perlu dikerjakan
+
   const startBtn = document.querySelector(".btn-start");
   const usernameInput = document.querySelector("#usernameInput");
   const saveUsername = document.querySelector("#btnUsername");
   const answerInput = document.querySelector("#answer-input");
   const username = document.querySelector("#uname");
+  const questionTotalDisplay = document.querySelector(".question-total-soal");
+  const submitButton = document.querySelector("#submitAnswer");
 
-  // Load username sebelumnya jika ada
+  let health = 5;
+
   const previousUsername = localStorage.getItem("username");
   if (previousUsername) {
     usernameInput.value = previousUsername;
   }
 
-  // hidden btn-start dan munculkan masukan username
   startBtn.addEventListener("click", function () {
     const start = document.querySelector("#rules");
     start.classList.add("popup-hidden");
     username.classList.remove("popup-hidden");
   });
 
-  // simpan username ke localstorage
   saveUsername.addEventListener("click", (e) => {
     e.preventDefault();
     const usernameValue = usernameInput.value;
@@ -33,17 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentQuestionIndex = 0;
 
   function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+    return array.sort(() => Math.random() - 0.5);
   }
 
   function startGame() {
-    shuffledQuestions = shuffleArray([...questions]);
+    shuffledQuestions = shuffleArray([...questions]).slice(0, TOTAL_QUESTIONS);
     currentQuestionIndex = 0;
-
     username.classList.add("popup-hidden");
     displayQuestion();
 
@@ -54,27 +52,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayQuestion() {
-    if (currentQuestionIndex < shuffledQuestions.length) {
+    if (currentQuestionIndex < TOTAL_QUESTIONS) {
       const question = shuffledQuestions[currentQuestionIndex];
       const questionElement = document.querySelector(".question p");
       questionElement.textContent = question.question;
 
-      // Set maximum input length sesuai dengan panjang jawaban
       answerInput.setAttribute("maxlength", question.answer.length);
 
       const guessElement = document.querySelector(".guess");
 
-      // Menghapus semua children dari .guess
       while (guessElement.firstChild) {
         guessElement.removeChild(guessElement.firstChild);
       }
 
-      // Membuat elemen <p> berdasarkan panjang jawaban
       for (let i = 0; i < question.answer.length; i++) {
         const p = document.createElement("p");
         p.classList.add("word");
         guessElement.appendChild(p);
       }
+
+      // Update tampilan soal saat ini
+      questionTotalDisplay.textContent = `${
+        currentQuestionIndex + 1
+      }/${TOTAL_QUESTIONS}`;
     } else {
       endGame();
     }
@@ -83,23 +83,55 @@ document.addEventListener("DOMContentLoaded", function () {
   answerInput.addEventListener("input", handleAnswerInput);
 
   function handleAnswerInput() {
-    const wordElements = document.querySelectorAll(".guess p");
     const inputValue = answerInput.value;
+    const wordElements = document.querySelectorAll(".guess p");
 
     wordElements.forEach((wordEl, index) => {
+      wordEl.textContent = inputValue[index] || "";
       if (inputValue[index]) {
-        wordEl.textContent = inputValue[index];
-        wordEl.classList.remove("word");
         wordEl.classList.add("word-fill");
+        wordEl.classList.remove("word");
       } else {
-        wordEl.textContent = "";
+        wordEl.classList.remove("word-fill");
         wordEl.classList.add("word");
       }
     });
   }
+  submitButton.addEventListener("click", function (e) {
+    e.preventDefault(); // Ini untuk mencegah reload jika tombol tersebut berada di dalam form
+    checkAnswer();
+  });
+  function checkAnswer() {
+    const answer = shuffledQuestions[currentQuestionIndex].answer;
+    const inputValue = answerInput.value;
+
+    if (inputValue.toLowerCase() === answer.toLowerCase()) {
+      health = 5;
+      updateImage();
+      currentQuestionIndex++;
+      answerInput.value = "";
+      displayQuestion();
+    } else {
+      health--;
+      updateImage();
+      if (health === 0) {
+        alert("Jawaban yang benar adalah: " + answer);
+        health = 5;
+        currentQuestionIndex++;
+        answerInput.value = "";
+        displayQuestion();
+      } else {
+        alert("Nyawa anda tinggal " + health);
+      }
+    }
+  }
+
+  function updateImage() {
+    const image = document.querySelector(".question-img img");
+    image.src = `./assets/balon${health}.svg`;
+  }
 
   function endGame() {
     console.log("Game over!");
-    // Anda bisa menambahkan apa yang ingin dilakukan setelah game selesai di sini.
   }
 });
