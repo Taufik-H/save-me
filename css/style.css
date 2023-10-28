@@ -637,6 +637,7 @@ header .close-share:hover {
 }
 /* end share */
 
+
 /* responsive */
 /*... CSS Anda sebelumnya ...*/
 
@@ -689,3 +690,112 @@ header .close-share:hover {
 /* Extra Large (xl) */
 @media (max-width: 1280px) {
 }
+
+/* jawaban salah */
+.salah {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: var(--white);
+  text-align: center;
+}
+
+.salah h1 {
+  color: var(--yellow);
+  font-size: var(--5xl);
+  font-style: normal;
+  font-weight: var(--black);
+  line-height: normal;
+}
+
+.salah h1 span {
+  color: var(--red);
+  font-size: var(--5xl);
+  font-style: normal;
+  font-weight: var(--black);
+  line-height: normal;
+}
+
+.salah h3 {
+  color: var(--text);
+  font-size: var(--base);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.salah h2 {
+  color: var(--slate-400, #94a3b8);
+  font-size: var(--base);
+  font-style: normal;
+  font-weight: var(--normal);
+  line-height: normal;
+}
+
+.btn-next {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 488px;
+  padding: 10px;
+  font-weight: var(--bold);
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: var(
+    --Btn-Gradient,
+    linear-gradient(182deg, #fff622 -8.34%, #e07411 126.67%)
+  );
+}
+
+/* game complete */
+.complete {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: var(--white);
+  text-align: center;
+}
+
+.complete h1 {
+  color: var(--yellow);
+  font-size: var(--5xl);
+  font-style: normal;
+  font-weight: var(--black);
+  line-height: normal;
+}
+
+.complete h1 span {
+  color: var(--green);
+  font-size: var(--5xl);
+  font-style: normal;
+  font-weight: var(--black);
+  line-height: normal;
+}
+
+.btn-result {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: var(--bold);
+  width: 488px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: var(
+    --Btn-Gradient,
+    linear-gradient(182deg, #fff622 -8.34%, #e07411 126.67%)
+  );
+}
+
