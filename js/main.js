@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateImage() {
     const image = document.querySelector(".question-img img");
-    image.src = `./assets/balon${health}.svg`;
+    image.src = `assets/balon${health}.svg`;
   }
 
   function showResults() {
