@@ -1,15 +1,13 @@
-// add game sound
 document.addEventListener("DOMContentLoaded", () => {
-  const klikSound = new Audio("../sound/kliktombol.wav");
-  const backsound = new Audio("../sound/backsound.wav");
-  const buttons = document.querySelectorAll("button");
+  const audioElements = document.querySelectorAll("audio");
   const soundIcon = document.getElementById("soundicon");
   const imgElement = soundIcon.querySelector("img");
 
+  let backsound = audioElements[0]; // Menggunakan elemen pertama sebagai backsound
+  let klikSound = audioElements[1]; // Menggunakan elemen kedua sebagai klik sound
+
   // backsound
-  backsound.preload = "auto";
-  backsound.volume = 0.5;
-  backsound.load();
+  backsound.volume = 0.4;
   backsound.currentTime = 0;
   backsound.play();
   backsound.loop = true;
@@ -23,10 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const buttons = document.querySelectorAll("button");
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
-      klikSound.preload = "auto";
-      klikSound.load();
       klikSound.currentTime = 0;
       klikSound.play();
     });
