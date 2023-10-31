@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const soundIcon = document.getElementById("soundicon");
   const imgElement = soundIcon.querySelector("img");
 
-  let backsound = audioElements[0]; // Menggunakan elemen pertama sebagai backsound
-  let klikSound = audioElements[1]; // Menggunakan elemen kedua sebagai klik sound
+  let backsound = audioElements[0];
+  let klikSound = audioElements[1];
 
   // backsound
   backsound.volume = 0.4;
