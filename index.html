@@ -82,7 +82,7 @@
                   >Masukan nama kamu</label
                 >
                 <div class="flex">
-                  <input id="usernameInput" type="text" />
+                  <input id="usernameInput" type="text" autofocus />
                   <button id="btnUsername">Submit</button>
                 </div>
               </div>
@@ -110,6 +110,7 @@
           </div>
           <div class="answer-input">
             <input
+              autofocus
               type="text"
               id="answer-input"
               placeholder="Tulis jawabanmu disini..."
@@ -229,10 +230,10 @@
         </p>
       </div>
     </div>
-    <audio controls>
+    <audio controls class="popup-hidden">
       <source src="sound/backsound.wav" type="audio/wav" />
     </audio>
-    <audio controls>
+    <audio controls class="popup-hidden">
       <source src="sound/kliktombol.wav" type="audio/wav" />
     </audio>
 
