@@ -209,4 +209,67 @@ document.addEventListener("DOMContentLoaded", function () {
   btnKembali.addEventListener("click", function () {
     location.reload();
   });
+
+  // disable inpect & right click
+  window.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+    var contextElement = document.getElementById("context-menu");
+    contextElement.style.top = event.offsetY + "px";
+    contextElement.style.left = event.offsetX + "px";
+    contextElement.classList.add("active");
+  });
+  window.addEventListener("click", function () {
+    var contextElement = document
+      .getElementById("context-menu")
+      .classList.remove("active");
+  });
+
+  //disable shortcut nyari ini ya pak???
+  document.onkeydown = function (e) {
+    if (e.keyCode == 123) {
+      return false;
+    }
+
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      e.shiftKey &&
+      e.keyCode == "I".charCodeAt(0)
+    ) {
+      return false;
+    }
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      e.shiftKey &&
+      e.keyCode == "C".charCodeAt(0)
+    ) {
+      return false;
+    }
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      e.shiftKey &&
+      e.keyCode == "J".charCodeAt(0)
+    ) {
+      return false;
+    }
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      e.shiftKey &&
+      e.keyCode == "U".charCodeAt(0)
+    ) {
+      return false;
+    }
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      e.shiftKey &&
+      e.keyCode == "M".charCodeAt(0)
+    ) {
+      return false;
+    }
+    if ((e.ctrlKey || e.metaKey) && e.keyCode == "M".charCodeAt(0)) {
+      return false;
+    }
+    if ((e.ctrlKey || e.metaKey) && e.keyCode == "I".charCodeAt(0)) {
+      return false;
+    }
+  };
 });

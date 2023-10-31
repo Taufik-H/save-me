@@ -880,3 +880,40 @@ header .close-share:hover {
   background-color: rgb(15, 169, 33);
   transition: all 0.5s;
 }
+
+.popup-inspect {
+  width: 300px;
+
+  position: absolute;
+  background-color: var(--white);
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  box-shadow: 4px 4px 28px 0px rgba(19, 25, 79, 0.25);
+  margin: 0 auto;
+}
+.popup-inspect img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.popup-inspect p {
+  font-size: var(--xl);
+  text-transform: capitalize;
+  font-weight: var(--bold);
+  text-align: center;
+}
+#context-menu {
+  position: fixed;
+  z-index: 1000000;
+  background: #fff;
+  border-radius: 7px;
+  transform: scale(0);
+  transform-origin: top left;
+}
+#context-menu.active {
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
