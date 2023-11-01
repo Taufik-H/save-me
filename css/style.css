@@ -105,7 +105,7 @@ header {
 /* navbar */
 
 .card {
-  width: 100%;
+  width: fit-content;
   margin: 0 auto;
   background-color: var(--white);
   border-radius: 20px;
@@ -250,6 +250,9 @@ header {
 }
 .question p {
   /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 5px;
   min-width: 300px;
   background-color: var(--blue-dark);
@@ -259,6 +262,7 @@ header {
   padding: 5px;
   border-radius: 10px;
   text-align: center;
+  height: 50px;
 }
 .question-board-content {
   /* margin-top: 20px; */
@@ -700,6 +704,7 @@ header .close-share:hover {
     padding: 20px 0;
     width: 70%;
   }
+
   .result-title {
     width: 90%;
   }
@@ -707,7 +712,6 @@ header .close-share:hover {
     padding: 10px 10px;
   }
 
-  .card,
   .popup-share {
     width: 90%;
   }
@@ -715,9 +719,6 @@ header .close-share:hover {
 
 /* Large (lg) */
 @media (min-width: 1025px) {
-  #rules .card {
-    width: 40%;
-  }
   #answer {
     width: 40%;
   }
@@ -788,6 +789,7 @@ header .close-share:hover {
   right: 0;
   bottom: 0;
   z-index: 9999;
+  padding: 10px;
   pointer-events: none;
 }
 
@@ -804,6 +806,11 @@ header .close-share:hover {
 }
 .salah button {
   cursor: pointer;
+  width: 100%;
+}
+.complete button {
+  cursor: pointer;
+  width: 100%;
 }
 
 .salah h1 {
@@ -812,6 +819,7 @@ header .close-share:hover {
   font-style: normal;
   font-weight: var(--black);
   line-height: normal;
+  margin-bottom: 5px;
 }
 
 .salah h1 span {
@@ -824,18 +832,15 @@ header .close-share:hover {
 
 .salah h3 {
   color: var(--text);
-  font-size: var(--base);
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: var(--normal);
+  margin-bottom: 10px;
 }
 
 .salah h2 {
-  color: var(--slate-400, #94a3b8);
   font-size: var(--base);
+  margin-bottom: 10px;
   font-style: normal;
   font-weight: var(--normal);
-  line-height: normal;
 }
 
 .btn-next {
@@ -992,4 +997,7 @@ header .close-share:hover {
 #context-menu.active {
   transform: scale(1);
   transition: transform 200ms ease-in-out;
+}
+.result-board .card {
+  width: 100%;
 }
