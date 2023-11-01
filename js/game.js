@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // backsound
   backsound.volume = 0.4;
   backsound.currentTime = 0;
-  // backsound.play();
+  backsound.play();
   backsound.loop = true;
   soundIcon.addEventListener("click", function () {
     if (!backsound.paused) {
