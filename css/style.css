@@ -174,7 +174,7 @@ header {
   padding: 20px;
   width: 100%;
   background-color: var(--purple);
-  background-image: url("/assets/puzzle.svg");
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -188,7 +188,7 @@ header {
   height: auto;
   padding: 10px;
   background-color: var(--orange);
-  background-image: url("/assets/puzzle-orange.svg");
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -760,7 +760,7 @@ header .close-share:hover {
     text-align: center;
   }
   .result-board {
-    padding: 20px 0;
+    padding: 20px;
     width: 50%;
   }
 }
