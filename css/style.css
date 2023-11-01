@@ -105,7 +105,7 @@ header {
 /* navbar */
 
 .card {
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
   background-color: var(--white);
   border-radius: 20px;
@@ -168,16 +168,11 @@ header {
   font-weight: var(--bold);
   background-image: var(--gradient-yellow);
 }
-.question-board-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 .question-board {
   display: flex;
-  width: fit-content;
-  padding: 10px;
+  padding: 20px;
+  width: 100%;
   background-color: var(--purple);
   background-image: url("/assets/puzzle.svg");
   justify-content: center;
@@ -189,7 +184,7 @@ header {
 }
 .result-board {
   display: flex;
-  width: fit-content;
+  width: 100%;
   height: auto;
   padding: 10px;
   background-color: var(--orange);
@@ -222,6 +217,7 @@ header {
 .result-data {
   display: flex;
   padding: 10px;
+  width: 100%;
   justify-content: space-between;
 }
 .result-data:hover {
@@ -235,8 +231,8 @@ header {
 }
 .question-total-soal {
   display: flex;
-  width: 100px;
-  padding: 5px;
+  width: 70px;
+  padding: 3px;
   color: var(--blue);
   font-weight: var(--medium);
   background-color: var(--white);
@@ -246,29 +242,27 @@ header {
   border-radius: 20px;
 }
 .question {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
   min-width: 100px;
+  padding: 0 20px;
 }
 .question p {
-  position: absolute;
-  top: 5px;
-  min-width: 400px;
+  /* position: absolute; */
+  margin-top: 5px;
+  min-width: 300px;
   background-color: var(--blue-dark);
   color: var(--white);
   font-size: var(--md);
-  font-weight: var(--medium);
+  font-weight: var(--bold);
   padding: 5px;
   border-radius: 10px;
   text-align: center;
 }
 .question-board-content {
-  margin-top: 20px;
-  width: 600px;
-  height: 300px;
+  /* margin-top: 20px; */
+  width: 100%;
 }
 .question-board-content .guess {
   position: relative;
@@ -652,7 +646,6 @@ header .close-share:hover {
 
   .card,
   .popup-share {
-    width: 95%;
     margin: 15px auto;
     box-sizing: border-box;
   }
@@ -673,7 +666,43 @@ header .close-share:hover {
 }
 
 /* Medium (md) */
-@media (max-width: 768px) {
+@media (min-width: 767px) {
+  .answer-input {
+    width: 100%;
+  }
+  .question-board-content {
+    margin-top: 20px;
+    height: 400px;
+  }
+  .question-total-soal {
+    margin-bottom: 20px;
+  }
+  .question-board {
+    width: 90%;
+  }
+  .question {
+    position: relative;
+    margin-top: 40px;
+  }
+  .question p {
+    position: absolute;
+    margin-top: 5px;
+    min-width: 300px;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    font-size: var(--md);
+    font-weight: var(--bold);
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .result-board {
+    padding: 20px 0;
+    width: 70%;
+  }
+  .result-title {
+    width: 90%;
+  }
   .footer {
     padding: 10px 10px;
   }
@@ -685,7 +714,54 @@ header .close-share:hover {
 }
 
 /* Large (lg) */
-@media (max-width: 1024px) {
+@media (min-width: 1025px) {
+  #rules .card {
+    width: 40%;
+  }
+  #answer {
+    width: 40%;
+  }
+  .answer-input {
+    width: 100%;
+  }
+  .question-img img {
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+  }
+  .question-board-content {
+    margin-top: 10px;
+    width: 100%;
+    height: 300px;
+  }
+  .question-board {
+    width: 40%;
+    padding: 20px;
+  }
+  .question-board .card {
+    width: 100%;
+  }
+  .question {
+    position: relative;
+    margin-top: 30px;
+  }
+  .question p {
+    position: absolute;
+    margin-top: 5px;
+    width: 400px;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    font-size: var(--sm);
+    font-weight: var(--medium);
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .result-board {
+    padding: 20px 0;
+    width: 50%;
+  }
 }
 
 /* Extra Large (xl) */
@@ -809,7 +885,6 @@ header .close-share:hover {
 }
 
 .btn-result {
-  display: block;
   cursor: pointer;
   justify-content: center;
   align-items: center;
@@ -845,7 +920,7 @@ header .close-share:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin: 10px 0;
   gap: 5px;
 }
@@ -857,8 +932,8 @@ header .close-share:hover {
   font-weight: var(--bold);
   text-transform: uppercase;
   background-color: var(--yellow);
-  border: none;
   padding: 5px;
+  border: 2px solid var(--text);
   border-radius: 7px;
 }
 .btn-ulang:hover {
@@ -872,7 +947,8 @@ header .close-share:hover {
   font-weight: var(--bold);
   text-transform: uppercase;
   background-color: var(--green);
-  border: none;
+
+  border: 2px solid var(--text);
   padding: 5px;
   border-radius: 7px;
 }
