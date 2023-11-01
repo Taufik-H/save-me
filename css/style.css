@@ -105,7 +105,7 @@ header {
 /* navbar */
 
 .card {
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
   background-color: var(--white);
   border-radius: 20px;
@@ -740,8 +740,12 @@ header .close-share:hover {
     width: 40%;
     padding: 20px;
   }
-  .question-board .card {
-    width: 100%;
+
+  .rules .card {
+    width: fit-content;
+  }
+  .uname .card {
+    width: fit-content;
   }
   .question {
     position: relative;
