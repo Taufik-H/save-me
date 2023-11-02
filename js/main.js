@@ -108,9 +108,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function checkAnswer() {
     const answer = shuffledQuestions[currentQuestionIndex].answer;
     const inputValue = answerInput.value;
+    const lowerCaseInputValue = inputValue.toLowerCase();
     totalAttempts++;
 
-    if (inputValue === answer) {
+    if (lowerCaseInputValue === answer) {
       correctAnswersCount++;
       let winrateForThisQuestion = 100 - 20 * (5 - health);
       winrates.push(winrateForThisQuestion);
