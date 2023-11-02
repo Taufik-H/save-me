@@ -481,7 +481,8 @@ header {
 .popup-share :is(header, .icons-share, .field-share) {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
+  justify-content: start;
 }
 
 .popup-share header {
@@ -553,18 +554,10 @@ header .close-share:hover {
 }
 
 .icons-share a:nth-child(3) {
-  color: #e1306c;
-  border-color: #f5bccf;
-}
-.icons-share a:nth-child(3):hover {
-  background: #e1306c;
-}
-
-.icons-share a:nth-child(4) {
   color: #25d366;
   border-color: #bef4d2;
 }
-.icons-share a:nth-child(4):hover {
+.icons-share a:nth-child(3):hover {
   background: #25d366;
 }
 
