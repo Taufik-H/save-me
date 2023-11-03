@@ -187,6 +187,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showResults() {
+    const soundResult = document.querySelector(".sound-semuabenar");
+    soundResult.currentTime = 0;
+    soundResult.play();
     let totalWinrate = winrates.reduce((acc, curr) => acc + curr, 0);
     totalWinrate /= winrates.length;
     const username = localStorage.getItem("username");
@@ -213,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ).textContent = totalWinrate.toFixed(2) + "%";
 
     qboard.classList.add("popup-hidden");
+
     answerCard.classList.add("popup-hidden");
     resultBoard.classList.remove("popup-hidden");
   }
