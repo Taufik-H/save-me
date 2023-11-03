@@ -140,6 +140,10 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuestionIndex++;
         answerInput.value = "";
         const salah = document.querySelector(".salah");
+        const soundSalah = document.querySelector(".sound-salah");
+        soundSalah.volume = 0.5;
+        soundSalah.currentTime = 0.5;
+        soundSalah.play();
         showPopup(salah);
         const h3 = salah.querySelector("h3");
         h3.textContent = `Jawaban yang benar adalah: ${answer}`;
@@ -149,10 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showPopup(popupElement) {
     const popBlur = document.querySelector(".pop-blur");
-    const soundSalah = document.querySelector(".sound-salah");
-    soundSalah.volume = 0.5;
-    soundSalah.currentTime = 0.5;
-    soundSalah.play();
+
     popBlur.classList.remove("popup-hidden");
     popupElement.classList.remove("popup-hidden");
   }
