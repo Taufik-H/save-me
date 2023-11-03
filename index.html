@@ -81,7 +81,7 @@
                 <p>8. Enjoy the game, let’s jumped to the questions.</p>
               </div>
             </div>
-            <button type="button" class="btn-start start btn-animate">
+            <button type="button" class="btn-start start btn-animate btn-sound">
               START
             </button>
           </div>
@@ -100,7 +100,9 @@
                   >
                   <div class="flex">
                     <input id="usernameInput" type="text" autofocus />
-                    <button id="btnUsername" class="btn-animate">Submit</button>
+                    <button id="btnUsername" class="btn-animate btn-sound">
+                      Submit
+                    </button>
                   </div>
                 </div>
               </form>
@@ -178,8 +180,8 @@
               </div>
             </div>
             <div class="result-btn">
-              <button class="btn-ulang">Ulangin</button>
-              <button class="btn-kembali">Kembali</button>
+              <button class="btn-ulang btn-sound">Ulangin</button>
+              <button class="btn-kembali btn-sound">Kembali</button>
             </div>
           </div>
         </div>
@@ -215,7 +217,7 @@
                 type="text"
                 value="https://wdp-12.github.io/finalproject1-kelompok6/"
               />
-              <button>Copy</button>
+              <button class="btn-sound">Copy</button>
             </div>
           </div>
         </div>
@@ -230,14 +232,14 @@
           <h1>JAWABAN <span>SALAH</span></h1>
           <h3>Jawaban : answer</h3>
           <h2>Lanjut ke pertanyaan selanjutnya</h2>
-          <button type="button" class="btn-next">Lanjutkan</button>
+          <button type="button" class="btn-next btn-sound">Lanjutkan</button>
         </div>
       </div>
       <div class="containerpop">
         <div class="complete popup-hidden">
           <h4>5/5</h4>
           <h1>GAME <span>COMPLETE</span></h1>
-          <button type="button" class="btn-result">Result</button>
+          <button type="button" class="btn-result btn-sound">Result</button>
         </div>
       </div>
 
@@ -267,6 +269,18 @@
     </audio>
     <audio controls class="popup-hidden">
       <source src="sound/kliktombol.wav" type="audio/wav" />
+    </audio>
+    <audio controls class="popup-hidden">
+      <source src="sound/emangbole.wav" type="audio/wav" />
+    </audio>
+    <audio controls class="sound-meledak popup-hidden">
+      <source src="sound/balonmeletus.wav" type="audio/wav" />
+    </audio>
+    <audio controls class="sound-salah popup-hidden">
+      <source src="sound/soundjawabansalah.wav" type="audio/wav" />
+    </audio>
+    <audio controls class="sound-benar popup-hidden">
+      <source src="sound/ding.wav" type="audio/wav" />
     </audio>
 
     <script type="module" src="js/main.js"></script>

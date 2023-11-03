@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let backsound = audioElements[0];
   let klikSound = audioElements[1];
+  let klikkanan = audioElements[2];
 
   // backsound
   backsound.volume = 0.4;
@@ -21,11 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const buttons = document.querySelectorAll("button");
+  const buttons = document.querySelectorAll(".btn-sound");
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
       klikSound.currentTime = 0;
       klikSound.play();
     });
+  });
+
+  window.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+    klikkanan.volume = 0.5;
+    klikkanan.currentTime = 0;
+    klikkanan.play();
   });
 });

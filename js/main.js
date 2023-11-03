@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const qboard = document.querySelector(".question-board");
   const answerCard = document.querySelector("#answer");
   const btnResult = document.querySelector(".btn-result");
+  const meledak = document.querySelector(".sound-meledak");
 
   let correctAnswersCount = 0;
   let totalAttempts = 0;
@@ -112,6 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
     totalAttempts++;
 
     if (lowerCaseInputValue === answer) {
+      const soundBenar = document.querySelector(".sound-benar");
+      soundBenar.currentTime = 0;
+      soundBenar.play();
       correctAnswersCount++;
       let winrateForThisQuestion = 100 - 20 * (5 - health);
       winrates.push(winrateForThisQuestion);
@@ -121,6 +125,9 @@ document.addEventListener("DOMContentLoaded", function () {
       displayQuestion();
     } else {
       health--;
+      const soundMeledak = document.querySelector(".sound-meledak");
+      soundMeledak.currentTime = 0;
+      soundMeledak.play();
       updateImage();
       if (health <= 0) {
         winrates.push(0);
@@ -137,6 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showPopup(popupElement) {
     const popBlur = document.querySelector(".pop-blur");
+    const soundSalah = document.querySelector(".sound-salah");
+    soundSalah.volume = 0.5;
+    soundSalah.currentTime = 0.5;
+    soundSalah.play();
     popBlur.classList.remove("popup-hidden");
     popupElement.classList.remove("popup-hidden");
   }
@@ -165,6 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateImage() {
     const image = document.querySelector(".question-img img");
+
     image.src = `assets/balon${health}.svg`;
   }
 
