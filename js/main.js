@@ -105,6 +105,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   let health = 5;
+  answerInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      checkAnswer();
+    }
+  });
 
   function checkAnswer() {
     const answer = shuffledQuestions[currentQuestionIndex].answer;
