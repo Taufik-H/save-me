@@ -23,7 +23,7 @@ npm run dev
 ## Ringkasan
 
 projek ini merupakan implementasi konsep dari game hangman, beberapa hal yang telah kami improve adalah :
-- leveling
+
 - next question (sebelumya  hanya dapat mengerjakan 1 soal saja)
 - backsound
 - image character
